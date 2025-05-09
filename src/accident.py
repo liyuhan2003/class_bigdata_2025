@@ -6,5 +6,9 @@ response = requests.get(url)
 data = response.json()
 data = data["result"]["records"]
 
+COUNT = 0
 for item in data:
-    print(f'{item["ACCYMD"]} {item["PLACE"]} {item["CARTYPE"]}')
+    if "114年03月10日" in item["ACCYMD"]:
+        COUNT += 1
+        print(f'{item["ACCYMD"]} {item["PLACE"]} {item["CARTYPE"]}')
+print(COUNT)
