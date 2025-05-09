@@ -1,4 +1,5 @@
-FROM python:3.8
-RUN pip install requests
-WORKDIR /app
-COPY . .
+FROM postgres:latest
+ENV POSTGRES_DB=nutn
+ENV POSTGRES_USER=nutn
+ENV POSTGRES_PASSWORD=nutn@password
+EXPOSE 5432
