@@ -18,7 +18,7 @@ check_container_exists() {
 # install postgres server
 if [[ "$(docker images -q $IMAGE_NAME 2> /dev/null)" == "" ]]; then
 	echo "Docker image $IMAGE_NAME not found. Building..."
-	docker build -f SCRIPT_DIR/../Docker/Postgres/Dockerfile -t $IMAGE_NAME .
+	docker build -f $SCRIPT_DIR/../Docker/Postgres/Dockerfile -t $IMAGE_NAME .
 fi
 
 if ! check_container_exists; then
